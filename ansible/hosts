@@ -1,6 +1,6 @@
-all:
- k8s:
-  servers:
-    192.168.0.25:
-        ansible_user:
-           root:
+---
+
+microk8s:
+ hosts:
+   192.168.0.25:
+      ansible_user: root
