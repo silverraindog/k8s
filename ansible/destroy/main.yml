@@ -1,0 +1,2 @@
+- name: installing nginx controller with helm
+  shell: "snap remove microk8s"

@@ -5,8 +5,8 @@
 - name: Helm repo update for cert-manager
   shell: "microk8s.helm3 repo update"
 
-#- name: installing cert-manager with helm
-#  shell: "microk8s.helm3 install cert-manager jetstack/cert-manager -f /tmp/values.yml --namespace cert-manager --create-namespace --version v1.6.1 --set installCRDs=true"
+- name: installing cert-manager with helm
+  shell: "microk8s.helm3 install cert-manager jetstack/cert-manager -f /tmp/values.yml --namespace cert-manager --create-namespace --version v1.6.1 --set installCRDs=true"
 
 - name: install the issuer
   shell: "microk8s.kubectl apply -f /tmp/issuer.yml"

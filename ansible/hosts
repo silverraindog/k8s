@@ -2,5 +2,5 @@
 
 microk8s:
  hosts:
-   home.sargus.net.za:
+   Hostname_change
       ansible_user: root
