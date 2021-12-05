@@ -2,5 +2,5 @@
 
 microk8s:
  hosts:
-   192.168.0.25:
+   home.sargus.net.za:
       ansible_user: root
