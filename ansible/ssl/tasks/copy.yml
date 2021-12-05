@@ -1,0 +1,10 @@
+ - name: Copying issuer to server
+   copy:
+    src: ../issuer.yml
+    dest: /tmp/
+
+
+ - name: Copying values to server
+   copy:
+    src: ../values.yml
+    dest: /tmp/

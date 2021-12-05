@@ -84,6 +84,10 @@
       127.0.0.1 api.snapcraft.io
   when: microk8s_disable_snap_autoupdate
 
+  # install bitnami repo for mysql
+- name: Add helm repo
+  shell: "microk8s.helm3 repo add bitnami https://charts.bitnami.com/bitnami"
+
 # install bitnami repo for mysql
 - name: Add helm repo
   shell: "microk8s.helm3 repo add bitnami https://charts.bitnami.com/bitnami"
@@ -100,6 +104,7 @@
 - name: installing nginx controller with helm
   shell: "microk8s.helm3 install nginx-ingress nginx-stable/nginx-ingress"
 
+
  # install bitnami repo for mysql
 - name: Add helm repo
-  shell: "microk8s.helm3 install Tech-Test --set wordpressUsername=admin --set wordpressPassword=k3ns3ntm3 --set mariadb.auth.rootPassword=K3n53nTM3 --set ingress.enabled=true --set ingress.hostname=home.sargus.net.za --set memcached.enabled=true --set memcached.service.port=11211 bitnami/wordpress bitnami/wordpress" 
+  shell: "microk8s.helm3 install tech-test --set wordpressUsername=admin --set wordpressPassword=k3ns3ntm3 --set mariadb.auth.rootPassword=K3n53nTM3 --set ingress.enabled=true --set ingress.hostname=home.sargus.net.za --set memcached.enabled=true --set memcached.service.port=11211 bitnami/wordpress" 

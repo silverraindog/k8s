@@ -1,0 +1,20 @@
+---
+- import_tasks: copy.yml
+
+- name: Copying issuer to server
+  include_tasks: copy.yml
+
+- name: Copying values to server
+  include_tasks: copy.yml
+
+- name: Helm repo for cert-manager
+  include_tasks: cert-manager.yml
+
+- name: Helm repo update for cert-manager
+  include_tasks: cert-manager.yml
+
+- name: installing cert-manager with helm
+  include_tasks: cert-manager.yml
+
+- name: install the issuer
+  include_tasks: cert-manager.yml
