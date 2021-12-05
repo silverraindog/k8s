@@ -18,6 +18,6 @@ jobs:
   runs-on: ubuntu-latest
   steps: 
   - id: create
-    run: ls
+    run: ansible-playbook -vvv -i ansible/hosts ansible/microk8s.yml
 
 
