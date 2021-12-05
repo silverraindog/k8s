@@ -1,0 +1,34 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+---
+- name: Run your Ansible playbook in a docker container
+  # You may pin to the exact commit or the version.
+  # uses: Hugozys/ansible-deploy@fcbcbb34052a8c14719248ad0b07bc9d74379846
+  uses: Hugozys/ansible-deploy@v1.1.0
+  with:
+    # playbook name.
+    playbook: microk8s.yml
+    # path to the root directory where your ansible code lives
+    directory: ansible/
+    # environment variables you need to pass to the playbook
+    envvars:
+    # extra varibles you need to pass to the playbook
+    extvars: 
+    # the private ssh key you use to connect to remote node
+    ssh_key: 
+    # file name of your private ssh key. It will be put under ~/.ssh/
+    ssh_key_file_name:
+    # define the verbosity level of output when running your playook
+    verbose: 0
