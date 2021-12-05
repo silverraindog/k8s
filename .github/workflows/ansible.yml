@@ -17,11 +17,10 @@ jobs:
   deploy:
     steps:
       - name: create
-        uses: dawidd6/action-ansible-playbook@v2.5.0
+        uses: saubermacherag/ansible-playbook-docker-action@v1.4
         with:
         # Ansible playbook filepath
-        playbook: microk8s.yml
-        # Root directory of Ansible project (defaults to current)
-        directory: ansible
+        playbookName: ansible/microk8s.yml
+        inventoryFile: # ansible/host
 
 
