@@ -14,13 +14,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
-    steps:
-      - name: create
-        uses: saubermacherag/ansible-playbook-docker-action@v1.4
-        with:
-        # Ansible playbook filepath
-        playbookName: ansible/microk8s.yml
-        inventoryFile: # ansible/host
+ deploy:
+  runs-on: ubuntu-latest
+  steps: 
+  - id: create
+    run: ansible-playbook -vvv -i ansible/hosts ansible/microk8s.yml
 
 
