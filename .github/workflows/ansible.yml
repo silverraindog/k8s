@@ -22,7 +22,7 @@ jobs:
     - name: ansible check with ubuntu:latest
       uses: roles-ansible/check-ansible-ubuntu-latest-action@master
       with:
-        targets: "ansible/microk9s.yml"
+        targets: "ansible/create.yml"
         hosts: "localhost"
 
 
