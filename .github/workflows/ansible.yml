@@ -17,7 +17,12 @@ jobs:
  deploy:
   runs-on: ubuntu-latest
   steps: 
-  - id: create
-    run: ansible-playbook -vvv -i ansible/hosts ansible/microk8s.yml
+    - uses: actions/checkout@v2
+
+    - name: ansible check with ubuntu:latest
+      uses: roles-ansible/check-ansible-ubuntu-latest-action@master
+      with:
+        targets: "ansible/microk9s.yml"
+        hosts: "localhost"
 
 
